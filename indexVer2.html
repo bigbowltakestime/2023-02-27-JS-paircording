@@ -11,17 +11,17 @@
   <script>
     let root = document.getElementById("root");
     root.style.position
-    // function adddiv(){
-    //   let divNow = document.createElement("div");
-    //   root.appendChild(divNow);
-    //   console.log("appendDiv")
-    // }
-    // for(let i = 0; i < 3;i ++){
-    //   adddiv()
-    // };
+    function adddiv(){
+      let divNow = document.createElement("div");
+      root.appendChild(divNow);
+      console.log("appendDiv")
+    }
+    for(let i = 0; i < 3;i ++){
+      adddiv()
+    };
     function setBoxSize(obj, widNum, heiNum){
-      obj.style.width = widNum + "vw"
-      obj.style.height = heiNum + "vh"
+      obj.style.width = widNum
+      obj.style.height = heiNum
     };
     function setFlex(obj, justiStr, alignStr){
       obj.style.display = "flex";
@@ -30,42 +30,39 @@
     };
     function setRelative(obj){
       obj.style.position = "relative"
-    }
-    setBoxSize(root,100,100)
-    setFlex(root, "center", "center")
-    setRelative(root)
-    makediv(3)
-    function makediv(num) {
-      for(let i=0;i<num;i++) {
-        root.append(document.createElement('div'));
-      }
-    }
+    };
     function setWidthAndHeight(num,width,height) {
       root.children[num].style.width=`${width}px`;
       root.children[num].style.height=`${height}px`;
-    }
-    function setBackgroundcolorAndFilter(a,backgroundcolor,filter){
-      root.children[num].style.backgroundcolor= backgroundcolor;
-      root.children[num].style.filter = `${filter}px`;
-    }
+    };
+    function BackgroundcolorTo(obj,color){
+      obj.style.backgroundColor= color;
+    };
     function setMargin(obj,top,left,right,bottom) {
       obj.style.marginTop=`${top}px`;
       obj.style.marginLeft=`${left}px`;
       obj.style.marginRight=`${right}px`;
       obj.style.marginBottom=`${bottom}px`;
-    }  
+    };
     function setBorderRadius(num) {
       obj.style.bordeRadius=`${num}px`;
-    }
+    };
     function setOpacity(obj,num){
       obj.style.opacity=`${num}`;
-    }
-    
+    };
     function setOverflowx(obj){
       obj.style.overflowX = "hidden";
-    }
-
+    };
     
+    setBoxSize(root,"100vw","100vh")
+    BackgroundcolorTo(root,"cadetblue");
+    setFlex(root,"center","center")
+    setRelative(root)
+    let rootchildren = root.children;
+    for(let k = 0; k <rootchildren.length; k ++){
+      setBoxSize(rootchildren[k],"500px", "500px");
+      
+    }
     
     
 
