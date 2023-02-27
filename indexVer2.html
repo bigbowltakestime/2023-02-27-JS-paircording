@@ -44,9 +44,7 @@
       obj.style.marginRight=`${right}px`;
       obj.style.marginBottom=`${bottom}px`;
     };
-    function setBorderRadius(num) {
-      obj.style.bordeRadius=`${num}px`;
-    };
+
     function setOpacity(obj,num){
       obj.style.opacity=`${num}`;
     };
@@ -58,13 +56,39 @@
     BackgroundcolorTo(root,"cadetblue");
     setFlex(root,"center","center")
     setRelative(root)
+
+
     let rootchildren = root.children;
+
     for(let k = 0; k <rootchildren.length; k ++){
       setBoxSize(rootchildren[k],"500px", "500px");
-      
+      rootchildren[k].style.borderRadius = "50%";
+      rootchildren[k].style.opacity = "0.8";
+      rootchildren[k].style.position = "absolute";
     }
-    
-    
+
+    function marginBackColorFilter(obj, mTop,mLeft,BackColor, filt){
+      obj.style.marginTop = mTop;
+      obj.style.marginLeft = mLeft;
+      obj.style.backgroundColor = BackColor;
+      obj.style.filter = filt;
+    };
+
+    marginBackColorFilter(rootchildren[0],"300px","300px","salmon",'blur(20px)');
+    marginBackColorFilter(rootchildren[1],"50px","-50px","cornflowerblue",'blur(20px)');
+    marginBackColorFilter(rootchildren[2],"-100px","50px","coral",'blur(20px)');
+
+    let flag = true;
+    rootchildren[2].addEventListener("click",()=>{
+      if(flag){
+        BackgroundcolorTo(root,"black");
+        flag = false;
+      }
+      else{
+        BackgroundcolorTo(root,"cadetblue");
+        flag = true;
+      }
+    })
 
   </script>
 </body>
