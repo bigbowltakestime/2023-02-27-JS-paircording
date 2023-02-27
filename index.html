@@ -8,5 +8,38 @@
 </head>
 <body>
   <div id="root"></div>
+  <script>
+    let root = document.getElementById('root');
+
+    function makediv(num) {
+      for(let i=0;i<num;i++) {
+        root.append(document.createElement('div'));
+      }
+    }
+    function setWidthAndHeight(num,width,height) {
+      root.children[num].style.width=`${width}px`;
+      root.children[num].style.height=`${height}px`;
+    }
+    function setBackgroundcolorAndFilter(a,backgroundcolor,filter){
+      root.children[num].style.backgroundcolor= backgroundcolor;
+      root.children[num].style.filter = `${filter}px`;
+    }
+    function setMargin(obj,top,left,right,bottom) {
+      obj.style.marginTop=`${top}px`;
+      obj.style.marginLeft=`${left}px`;
+      obj.style.marginRight=`${right}px`;
+      obj.style.marginBottom=`${bottom}px`;
+    }  
+    function setBorderRadius(num) {
+      obj.style.bordeRadius=`${num}px`;
+    }
+    function setOpacity(obj,num){
+      obj.style.opacity=`${num}`;
+    }
+    
+  
+  
+    
+  </script>
 </body>
 </html>
