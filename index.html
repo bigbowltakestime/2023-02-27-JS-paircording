@@ -9,8 +9,32 @@
 <body>
   <div id="root"></div>
   <script>
-    let root = document.getElementById('root');
-
+    let root = document.getElementById("root");
+    root.style.position
+    // function adddiv(){
+    //   let divNow = document.createElement("div");
+    //   root.appendChild(divNow);
+    //   console.log("appendDiv")
+    // }
+    // for(let i = 0; i < 3;i ++){
+    //   adddiv()
+    // };
+    function setBoxSize(obj, widNum, heiNum){
+      obj.style.width = widNum + "vw"
+      obj.style.height = heiNum + "vh"
+    };
+    function setFlex(obj, justiStr, alignStr){
+      obj.style.display = "flex";
+      obj.style.justifyContent = justiStr;
+      obj.style.alignItems = alignStr;
+    };
+    function setRelative(obj){
+      obj.style.position = "relative"
+    }
+    setBoxSize(root,100,100)
+    setFlex(root, "center", "center")
+    setRelative(root)
+    
     function makediv(num) {
       for(let i=0;i<num;i++) {
         root.append(document.createElement('div'));
@@ -36,10 +60,12 @@
     function setOpacity(obj,num){
       obj.style.opacity=`${num}`;
     }
+
     
-  
-  
     
+    
+    
+
   </script>
 </body>
 </html>
